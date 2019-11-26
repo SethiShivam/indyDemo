@@ -1,0 +1,95 @@
+
+================= CONNECT POOL ================
+
+
+response = {
+    "poolHandle": 2
+}
+
+
+ "poolHandle": 2
+
+
+
+
+ ============   CREATE STEWARD ===========
+
+ api : http://localhost:14000/api/v1/pool/registerSteward
+
+ input : 
+{
+	"userName" : "steward",
+	"password" : "steward_key"
+}
+
+
+output : 
+
+{
+    "stewardDid": "4iBJaHAii6CRJe24oJpmNo",
+    "stewardVerKey": "32HByunLaZkfG6ekPWnANeuuvfYwNk7z3JB8ewh7VCyb",
+    "stewardWalletHandle": 3
+}
+
+===================== CREATE HOSPITAL WALLET =============================
+
+
+api : http://localhost:14000/api/v1/hospital/createWallet 	
+
+input :
+
+{
+	"userName" : "hospital_002",
+	"password" : "hospital_key"
+}
+
+
+output : {
+    "response": null
+}
+
+
+
+
+=======================  open Wallet ===========================>
+
+
+
+api : http://localhost:14000/api/v1/pool/openWallet
+
+
+input : HOSPITAL
+{
+	"userName" :"hospital_002",
+	"password" : "hospital_key"
+	
+}
+
+
+input : STEWARD
+
+
+
+
+
+
+output :  ####### for HOSPITAL
+
+{
+    "wallentHandle": 2
+}
+
+output : ####### for Government
+
+
+{
+    "wallentHandle": 3
+}
+
+
+
+############################ Onboard Trust Anchor #######################
+
+
+
+api : http://localhost:14000/api/v1/pool/onboardAuthority
